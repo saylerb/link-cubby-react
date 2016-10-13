@@ -1,12 +1,12 @@
 const React = require('react')
 const data = require('../public/data')
-const ShowCard = require('./ShowCard')
+const LinkCard = require('./LinkCard')
 
 const Search = () => (
   <div className='container'>
     <div className='links'>
       {data.links.map((link) => (
-        <ShowCard link={link} />
+        <LinkCard link={link} key={link.id} />
       ))}
     </div>
   </div>
