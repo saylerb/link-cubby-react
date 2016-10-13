@@ -10,10 +10,12 @@ const LinkCard = (props) => (
   </div>
 )
 
+const { string, bool } = React.PropTypes
+
 LinkCard.propTypes = {
-  img: React.PropTypes.string.isRequired,
-  title: React.PropTypes.string.isRequired,
-  read: React.PropTypes.bool.isRequired
+  img: string.isRequired,
+  title: string.isRequired,
+  read: bool.isRequired
 }
 
 module.exports = LinkCard
