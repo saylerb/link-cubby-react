@@ -10,7 +10,7 @@ class MyTitle extends React.Component {
     const style = {color: this.props.color}
     return (
       <div>
-        <h1 style={ style }>
+        <h1 style={style}>
           {this.props.title}
         </h1>
       </div>
