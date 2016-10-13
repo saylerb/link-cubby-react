@@ -4,7 +4,7 @@
   "description": "A React front end for a simple CRUD application that stores website links",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --module-bind 'js=babel' lib/index.js public/bundle.js"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
