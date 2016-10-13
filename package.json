@@ -4,7 +4,8 @@
   "description": "A React front end for a simple CRUD application that stores website links",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
