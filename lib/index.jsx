@@ -7,7 +7,7 @@ const {Router, Route, hashHistory} = require('react-router')
 const App = () => (
   <Router history={hashHistory}>
     <Route path='/' component={Landing} />
-    <Route path='/' component={Search} />
+    <Route path='/search' component={Search} />
   </Router>
 )
 
