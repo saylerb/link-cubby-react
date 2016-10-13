@@ -6,7 +6,7 @@ const Search = () => (
   <div className='container'>
     <div className='links'>
       {data.links.map((link) => (
-        <LinkCard link={link} key={link.id} />
+        <LinkCard {...link} key={link.id} />
       ))}
     </div>
   </div>
