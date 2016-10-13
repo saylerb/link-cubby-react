@@ -3,21 +3,25 @@
         "id":2,
         "title":"This is an unread link",
         "url":"http://stackoverflow.com/",
+        "img":"https://logo.clearbit.com/stackoverflow.com",
         "read":false
     }, {
         "id":3,
         "title":"This is a read link",
         "url":"https://www.reddit.com/",
+        "img":"https://logo.clearbit.com/reddit.com",
         "read":true
     }, {
         "id":7,
         "title":"Hello Neight!",
         "url":"https://67.media.tumblr.com/504cb94fe0f41e563f435ee2f833dcb5/tumblr_nw76ewmbtl1uiwthso1_400.gif",
+        "img":"https://logo.clearbit.com/tumblr.com",
         "read":false
     }, {
         "id":8,
         "title":"dasdfasdfsadf",
         "url":"http://www.google.com",
+        "img":"https://logo.clearbit.com/google.com",
         "read":false
     }]
 }
