@@ -1,27 +1,37 @@
+const path = require('path')
+
 module.exports = {
-  entry: {
-    main: ['babel-polyfill', './lib/index.js'],
-    test: ['babel-polyfill', 'mocha!./test/index.js'],
-  },
+  context: __dirname,
+  entry: './lib/index.jsx',
   output: {
-    path: __dirname,
-    filename: '[name].bundle.js',
+    path: path.join(__dirname, '/public'),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
+  },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: false
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react'],
-        },
+        loader: 'babel-loader'
       },
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.scss$/, loader: 'style!css!sass' },
-    ],
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css'],
-  },
-};
+      {
+        test: /\.json?$/,
+        loader: 'json-loader'
+      }
+    ]
+  }
+}
