@@ -7,7 +7,7 @@ class Search extends React.Component {
     super(props)
 
     this.state = {
-      searchTerm: 'this is the default searchTerm'
+      searchTerm: ''
     }
 
     this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
@@ -21,7 +21,7 @@ class Search extends React.Component {
     return (
       <div className='container'>
         <header className='header'>
-          <h1 className='brand'>{this.state.searchTerm}</h1>
+          <h1 className='brand'>Link Cubby</h1>
           <input
             value={this.state.searchTerm}
             className='search-input'
@@ -30,8 +30,14 @@ class Search extends React.Component {
           />
         </header>
         <div className='links'>
-          {data.links.map((link) => (
-            <LinkCard {...link} key={link.id} />
+          {data.links
+            .filter((show) => (
+              `'${show.title} ${show.description}`
+              .toUpperCase()
+              .indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+            )
+            .map((link) => (
+              <LinkCard {...link} key={link.id} />
           ))}
         </div>
       </div>
