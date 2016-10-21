@@ -5,12 +5,13 @@ const Search = require('./Search')
 const {Router, Route, IndexRoute, hashHistory} = require('react-router')
 const Layout = require('./Layout')
 const Details = require('./Details')
+const { links } = require('../public/data')
 
 const App = () => (
   <Router history={hashHistory}>
     <Route path='/' component={Layout}>
       <IndexRoute component={Landing} />
-      <Route path='/search' component={Search} />
+      <Route path='/search' component={Search} links={links} />
       <Route path='/details/:id' component={Details} />
     </Route>
   </Router>

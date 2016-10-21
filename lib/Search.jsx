@@ -1,6 +1,6 @@
 const React = require('react')
-const data = require('../public/data')
 const LinkCard = require('./LinkCard')
+const { arrayOf, object } = React.PropTypes
 
 class Search extends React.Component {
   constructor (props) {
@@ -30,7 +30,7 @@ class Search extends React.Component {
           />
         </header>
         <div className='links'>
-          {data.links
+          {this.props.route.links
             .filter((show) => (
               `'${show.title} ${show.description}`
               .toUpperCase()
@@ -40,9 +40,19 @@ class Search extends React.Component {
               <LinkCard {...link} key={link.id} />
           ))}
         </div>
+        <div>
+          <pre style={{textAlign: 'left'}}><code>
+            {JSON.stringify(this.props)}
+          </code></pre>
+        </div>
       </div>
     )
   }
+}
+
+Search.propTypes = {
+  route: object,
+  links: arrayOf(object)
 }
 
 module.exports = Search
