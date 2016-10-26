@@ -2,7 +2,7 @@
   "name": "link-cubby-react",
   "version": "1.0.0",
   "description": "A React front end for a simple CRUD application that stores website links",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
