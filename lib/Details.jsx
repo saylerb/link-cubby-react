@@ -1,5 +1,6 @@
 const React = require('react')
 const { object } = React.PropTypes
+const Header = require('./Header')
 
 class Details extends React.Component {
   render () {
@@ -8,9 +9,7 @@ class Details extends React.Component {
 
     return (
       <div className='container'>
-        <header className='header'>
-          <h1 className='brand'>Link Cubby</h1>
-        </header>
+        <Header />
         <div className='link-info'>
           <h1>{title}</h1>
           <h2>{url}</h2>
