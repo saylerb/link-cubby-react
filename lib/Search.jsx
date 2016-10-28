@@ -37,11 +37,6 @@ class Search extends React.Component {
               <LinkCard {...link} key={link.id} />
           ))}
         </div>
-        <div>
-          <pre style={{textAlign: 'left'}}><code>
-            {JSON.stringify(this.props)}
-          </code></pre>
-        </div>
       </div>
     )
   }
