@@ -1,6 +1,7 @@
 const React = require('react')
 const LinkCard = require('./LinkCard')
 const { arrayOf, object } = React.PropTypes
+const Header = require('./Header')
 
 class Search extends React.Component {
   constructor (props) {
@@ -10,25 +11,21 @@ class Search extends React.Component {
       searchTerm: ''
     }
 
-    this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
 
-  handleSearchTermEvent (event) {
-    this.setState({ searchTerm: event.target.value })
+  handleSearchTermChange (searchTerm) {
+    this.setState({ searchTerm })
   }
 
   render () {
     return (
       <div className='container'>
-        <header className='header'>
-          <h1 className='brand'>Link Cubby</h1>
-          <input
-            value={this.state.searchTerm}
-            className='search-input'
-            type='text' placeholder='Search'
-            onChange={this.handleSearchTermEvent}
-          />
-        </header>
+        <Header
+          handleSearchTermChange={this.handleSearchTermChange}
+          searchTerm={this.state.searchTerm}
+          linkSearch
+        />
         <div className='links'>
           {this.props.route.links
             .filter((show) => (
